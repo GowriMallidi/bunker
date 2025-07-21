@@ -54,7 +54,7 @@
                     <archive>
                         <manifest>
                             <!-- Replace this with your actual main class -->
-                            <mainClass>org.example.MainClass</mainClass>
+                            <mainClass>org.example.test.program1</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
