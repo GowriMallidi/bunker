@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test name="All Tests">
-        <classes>
-            <class name="testcases.program1"/>
-        </classes>
+        <packages>
+            <!-- This will run all classes under testcases package -->
+            <package name="testcases"/>
+        </packages>
     </test>
 </suite>
