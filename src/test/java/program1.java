@@ -8,24 +8,20 @@ import java.time.Duration;
 
 public class program1
 {
-        @Test
-        public void openbrowser() throws InterruptedException {
-                System.out.println("Setting up ChromeDriver...");
-                WebDriverManager.chromedriver().setup();
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--remote-allow-origins=*");
-                options.addArguments("start-maximized");
-                // Ensure headless is NOT enabled
-                // options.addArguments("--headless");  // Do NOT use this
+@Test
+public void openbroswer()
+{
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver=new ChromeDriver(options);
+        options.addArguments("start-maximized");
+        driver.get("https://www.facebook.com");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        System.out.println("Title: " + driver.getTitle());
 
-                WebDriver driver = new ChromeDriver(options);
-                System.out.println("ChromeDriver initialized.");
+        driver.quit();
 
-                driver.get("https://www.facebook.com");
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-                System.out.println("Title: " + driver.getTitle());
-
-                Thread.sleep(10000);  // Keep browser open for 10 seconds
-                driver.quit();
-        }
+    }
 }
