@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test name="All Tests">
         <classes>
-            <class name="testcases.program1"/>
+            <class name="program1" />
         </classes>
     </test>
 </suite>
