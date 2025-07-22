@@ -13,6 +13,7 @@ public class program1
 @Test
 public void openbroswer()
 {
+        System.out.println(">>> TestNG: openbrowser() started <<<");
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
