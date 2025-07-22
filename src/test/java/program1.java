@@ -1,20 +1,27 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
 public class program1
 {
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
+@Test
+public void openbroswer()
+{
         WebDriverManager.chromedriver().setup();
-        WebDriver driver=new ChromeDriver();
-        driver.get("https://www.google.com");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        WebDriver driver=new ChromeDriver(options);
+        options.addArguments("start-maximized");
+        driver.get("https://www.facebook.com");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        System.out.println("Title: " + driver.getTitle());
 
+        driver.quit();
 
     }
 }
